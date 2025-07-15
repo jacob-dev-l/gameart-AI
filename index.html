@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blender AI Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Blender AI Assistant</h1>
+      <p>Describe your model and get step-by-step Blender instructions</p>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <textarea id="modelInput" placeholder="Example: 'A low-poly fantasy sword with glowing runes'"></textarea>
+        <div class="controls">
+          <select id="styleSelect">
+            <option value="low_poly">Low Poly</option>
+            <option value="high_poly">High Poly</option>
+            <option value="stylized">Stylized</option>
+          </select>
+          <button id="generateBtn">Generate Guide</button>
+        </div>
+      </div>
+
+      <div id="outputSection" class="hidden">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Generating your Blender guide...</p>
+        </div>
+        <div id="guideOutput"></div>
+      </div>
+    </main>
+
+   <!-- Change the footer section to this: -->
+<footer>
+  <p>Ollama Settings:</p>
+  <input type="text" id="ollamaUrl" placeholder="http://localhost:11434" value="http://localhost:11434">
+  <input type="text" id="ollamaModel" placeholder="Model name (e.g. mistral)" value="mistral">
+  <button id="saveSettingsBtn">Save Settings</button>
+</footer>
+  </div>
+</body>
+</html>
